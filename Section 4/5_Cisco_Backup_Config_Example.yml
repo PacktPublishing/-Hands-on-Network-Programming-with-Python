@@ -1,0 +1,16 @@
+---
+- name: "Backup Running Configuration"
+  hosts: all
+  gather_facts: no
+  
+  tasks:
+    - name: 
+      ios_config:
+        backup: yes 
+      when: ansible_network_os == 'ios'
+
+    - name:
+      nxos_config:
+        backup: yes
+      when: ansible_network_os == 'nxos'
+      

@@ -1,0 +1,10 @@
+---
+- name: "Gather Facts"
+  hosts: lax-tor-r1
+  gather_facts: no
+  
+  tasks: 
+    - name: Gather facts for IOS Devices
+      ios_facts: 
+    
+

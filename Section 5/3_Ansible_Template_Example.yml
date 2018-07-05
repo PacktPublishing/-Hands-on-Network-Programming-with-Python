@@ -1,0 +1,15 @@
+---
+- name: Template Example
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks: 
+    - name: Generate Config
+      template: src=./config_templates/tor.j2 dest=./configs/{{ item.hostname }}.txt
+
+      with_items: 
+        - { hostname: lax-tor-r1, loopback: '192.168.0.10 255.255.255.255' }
+        - { hostname: lax-tor-r2, loopback: '192.168.0.11 255.255.255.255' }
+
+

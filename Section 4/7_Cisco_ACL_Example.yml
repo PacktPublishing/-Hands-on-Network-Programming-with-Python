@@ -1,0 +1,27 @@
+---
+- name: configure and show access list
+  hosts: lax-dc-tor
+  gather_facts: no
+  
+  tasks:
+    - name: configure ip access list
+      ios_config:
+        lines:
+          - 10 permit ip host 10.10.10.10 any log
+          - 20 permit ip host 20.20.20.20 any log
+        parents: ip access-list extended MY_ACL
+        before: no ip access-list extended MY_ACL
+        match: exact
+  
+    - name: show ip access list
+      ios_command:
+        commands: 
+          - show ip access-list
+      register: output 
+
+    - debug:
+        var: output
+
+
+
+      

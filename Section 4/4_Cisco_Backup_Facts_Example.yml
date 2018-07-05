@@ -1,0 +1,22 @@
+---
+- name: "Gather Facts and Backup"
+  hosts: lax-dc-tor
+  gather_facts: yes
+  
+  tasks:
+    - name: Default Gather Facts
+      debug: 
+        var: ansible_date_time 
+
+#    - debug:
+#        var: ansible_distribution
+
+    - name: Gather Facts from IOS Devices
+      ios_facts:
+      
+      register: output
+
+    - name: copy output to file
+      copy: content="{{ output }}" dest=./backup_output/{{ inventory_hostname }}.{{ ansible_date_time.date }}.txt 
+
+      

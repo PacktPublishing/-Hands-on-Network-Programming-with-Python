@@ -1,0 +1,14 @@
+---
+- name: Your First Custom Module
+  hosts: localhost
+  gather_facts: false
+  connection: local
+ 
+  tasks:
+    - name: Show Version
+      action: my_module
+      register: output
+
+    - debug:
+        var: output
+

@@ -1,0 +1,27 @@
+- Wikipedia Object-Oriented Programming
+https://en.wikipedia.org/wiki/Object-oriented_programming
+
+- Object-Oriented Programming in Python 3
+https://www.amazon.com/dp/1784398780/ref=sspa_dk_detail_0?psc=1
+
+- Netmiko documenation:
+http://netmiko.readthedocs.io/en/stable/index.html
+
+- Netmiko GitHub repository:
+https://github.com/ktbyers/netmiko
+
+- Netmiko Blog Post:
+https://pynet.twb-tech.com/blog/automation/netmiko.html
+
+- Netmiko Installation
+sudo apt-get install -y git python-pip
+git clone https://github.com/ktbyers/netmiko.git
+cd netmiko/
+pip install -r requirements.txt
+python setup.py install
+
+- Pexpect and Parmiko Examples
+https://github.com/PacktPublishing/Mastering-Python-Networking/tree/master/Chapter02
+
+- Python **kwargs
+https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3

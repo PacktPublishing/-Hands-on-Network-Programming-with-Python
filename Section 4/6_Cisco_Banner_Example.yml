@@ -1,0 +1,30 @@
+---
+- name: "Configure Banner"
+  hosts: all
+  gather_facts: no
+  
+  tasks:
+    - name: banner for IOS devices
+      ios_banner:
+        banner: login
+        text: | 
+          this is my login banner
+        state: present 
+      when: ansible_network_os == 'ios'
+  
+    - name: banner for NX-OS devices
+      nxos_banner:
+        banner: exec
+        state: absent
+      when: ansible_network_os == 'nxos'
+
+    - name: banner for IOS-XR devices
+      iosxr_banner: 
+        banner: login
+        text: |
+          this is my login banner
+        state: present
+      when: ansible_network_os == 'iosxr'
+
+
+      

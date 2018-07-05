@@ -1,0 +1,15 @@
+---
+- name: "Gather Facts"
+  hosts: lax-dc-tor
+  gather_facts: no
+  
+  tasks:
+    - name: Gather Facts from LAX-DC-TOR Devices
+      ios_facts:
+      
+      register: output
+
+    - name: Display facts variables
+      debug:
+        var: output
+

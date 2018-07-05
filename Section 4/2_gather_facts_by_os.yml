@@ -1,0 +1,15 @@
+---
+- name: "Gather Facts"
+  hosts: ios
+  gather_facts: no
+  
+  tasks:
+    - name: Gather Facts from all IOS Devices
+      ios_facts:
+      
+      register: output
+
+    - name: Display facts variables
+      debug:
+        var: output
+
